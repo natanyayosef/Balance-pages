@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="AidnWNa1uEbkds3N7_8rKLX9SJ8n_psZ-ey27TCpBFw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALANCE | Smart Finance</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800&family=Poppins:wght@300;400;700;800&display=swap');
+
+        :root {
+            --primary: #00e5ff;
+            --secondary: #0077ff;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Heebo', 'Poppins', sans-serif;
+        }
+
+        html, body {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            color: var(--dark);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
+        }
+
+        /* רקע דינמי מודרני */
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+        .shape1 { background: var(--primary); width: 400px; height: 400px; top: -100px; right: -100px; }
+        .shape2 { background: var(--secondary); width: 500px; height: 500px; bottom: 100px; left: -150px; }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        [dir="ltr"] .lang-switcher {
+            right: auto;
+            left: 20px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--dark);
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0, 229, 255, 0.3);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header & Hero */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo {
+            width: 100px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .logo:hover { transform: scale(1.05); }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--secondary), #00b4d8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #475569;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0, 119, 255, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0, 119, 255, 0.4);
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 1s ease-out;
+        }
+        .about-section h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+        .about-section p {
+            color: #475569;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .about-slogan {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .feature-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+            transition: transform 0.3s;
+            animation: fadeInUp 1s ease-out;
+        }
+        .feature-card:hover { transform: translateY(-10px); }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--dark); }
+        .feature-card p { color: #64748b; font-size: 1rem; }
+
+        /* Gallery */
+        .gallery-title { text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--dark); }
+        
+        .screens-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .screen-img {
+            width: 220px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            border: 5px solid white;
+        }
+        .screen-img:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-radius: 30px 30px 0 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .contact-email {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .legal-links a {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .legal-links a:hover { color: var(--secondary); }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .header {
+                margin-top: 70px;
+            }
+            .lang-switcher {
+                top: 10px;
+                right: 10px;
+                gap: 5px;
+            }
+            [dir="ltr"] .lang-switcher {
+                left: 10px;
+                right: auto;
+            }
+            .lang-btn {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+
+    <div class="lang-switcher">
+        <button onclick="setLanguage('he')" class="lang-btn" data-lang="he">עברית</button>
+        <button onclick="setLanguage('en')" class="lang-btn" data-lang="en">English</button>
+        <button onclick="setLanguage('ar')" class="lang-btn" data-lang="ar">العربية</button>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <img src="images/logo.png" alt="BALANCE Logo" class="logo">
+            <h1>BALANCE</h1>
+            <p class="subtitle" data-i18n="subtitle">הדרך החכמה לשלוט בכסף שלך, ביום-יום ובטיולים.</p>
+            <button class="cta-btn" data-i18n="cta">בקרוב בחנויות האפליקציות</button>
+        </header>
+
+        <section class="about-section">
+            <h2 data-i18n="aboutTitle">אודות BALANCE</h2>
+            <p data-i18n="aboutP1">הכירו את BALANCE – השותף החכם שלכם לניהול כספים.</p>
+            <p data-i18n="aboutP2">בין אם אתם מנהלים את ההוצאות השוטפות ביומיום או מתכננים את החופשה הבאה שלכם, BALANCE נועדה להעניק לכם שליטה מלאה, פשוטה וחכמה על התקציב שלכם.</p>
+            <p data-i18n="aboutP3">האפליקציה משלבת כלי ניהול תקציב מתקדמים, זיהוי קולי להזנת הוצאות מהירה, ובינה מלאכותית המעניקה לכם הערכות תקציב מדויקות ומותאמות אישית. עם תמיכה בריבוי מטבעות, סנכרון מלא לענן ומערכת התראות חכמה שתעזור לכם להישאר במסלול הפיננסי הנכון – אנחנו כאן כדי להפוך את ניהול הכסף שלכם לפעולה פשוטה ואפקטיבית.</p>
+            <p data-i18n="aboutP4">הפרטיות והשקיפות שלכם בראש סדר העדיפויות שלנו. למידע נוסף על אופן השימוש במידע שלכם, הזכויות שלכם והתחייבויות האפליקציה, אתם מוזמנים לעיין במסמכים המשפטיים שלנו:</p>
+            <p data-i18n="aboutP5" style="margin-top: 15px; margin-bottom: 25px; font-weight: bold; color: var(--secondary); background: rgba(0, 119, 255, 0.05); padding: 15px; border-radius: 10px; border: 1px solid rgba(0, 119, 255, 0.2);">שקיפות מידע: BALANCE דורשת גישה לנתונים מסוימים, כגון חשבון הגוגל שלך לאימות והתחברות מאובטחת לאפליקציה. אנו מבקשים רק את המידע המינימלי הדרוש לאספקת תכונות אלו, והמידע הפיננסי שלך נשאר בשליטתך הבלעדית.</p>
+            <div class="legal-links" style="margin-bottom: 20px;">
+                <a id="link-privacy" href="legal/privacy.html" target="_blank" data-i18n="privacy">מדיניות פרטיות</a>
+                <a id="link-terms" href="legal/terms.html" target="_blank" data-i18n="terms">תנאי שימוש</a>
+                <a id="link-access" href="legal/accessibility.html" target="_blank" data-i18n="accessibility">הצהרת נגישות</a>
+            </div>
+            <div class="about-slogan" data-i18n="aboutSlogan">BALANCE – מנהלים כסף בחוכמה, בכל מקום ובכל זמן.</div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">✈️</div>
+                <h3 data-i18n="feat1Title">Trip Radar</h3>
+                <p data-i18n="feat1Desc">תכנון ותקצוב מדויק לטיול הבא שלך. דע בדיוק כמה נשאר לך לבזבז בכל רגע נתון.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3 data-i18n="feat2Title">AI Concierge</h3>
+                <p data-i18n="feat2Desc">עוזר פיננסי חכם שמנתח את ההוצאות שלך ומספק תובנות מותאמות אישית.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 data-i18n="feat3Title">שליטה מלאה</h3>
+                <p data-i18n="feat3Desc">קטגוריות מותאמות אישית, מעקב יומיומי וסטטיסטיקות ברורות שעושות סדר בבלגן.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎤</div>
+                <h3 data-i18n="feat4Title">זיהוי קולי</h3>
+                <p data-i18n="feat4Desc">הזנת הוצאות מהירה ופשוטה באמצעות פקודות קוליות.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💱</div>
+                <h3 data-i18n="feat5Title">ריבוי מטבעות</h3>
+                <p data-i18n="feat5Desc">תמיכה במגוון מטבעות, אידיאלי למטיילים ולאנשי עסקים גלובליים.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3 data-i18n="feat6Title">סנכרון לענן</h3>
+                <p data-i18n="feat6Desc">הנתונים שלכם מגובים תמיד ומסונכרנים בין כל המכשירים שלכם.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3 data-i18n="feat7Title">התראות חכמות</h3>
+                <p data-i18n="feat7Desc">מערכת התראות שתעזור לכם לעמוד ביעדים ולהישאר במסלול הפיננסי הנכון.</p>
+            </div>
+        </section>
+
+        <h2 class="gallery-title" data-i18n="galleryTitle">הצצה לאפליקציה</h2>
+        <div class="screens-grid">
+            <img src="images/screen1.jpg" alt="Screen 1" class="screen-img">
+            <img src="images/screen2.jpg" alt="Screen 2" class="screen-img">
+            <img src="images/screen3.jpg" alt="Screen 3" class="screen-img">
+            <img src="images/screen4.jpg" alt="Screen 4" class="screen-img">
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p data-i18n="support">זקוקים לעזרה? צרו קשר:</p>
+        <a href="mailto:supportnftbalance@gmail.com" class="contact-email">supportnftbalance@gmail.com</a>
+        
+        <div class="legal-links">
+            <a id="footer-privacy" href="legal/privacy.html" target="_blank" data-i18n="privacy">מדיניות פרטיות</a>
+            <a id="footer-terms" href="legal/terms.html" target="_blank" data-i18n="terms">תנאי שימוש</a>
+            <a id="footer-access" href="legal/accessibility.html" target="_blank" data-i18n="accessibility">הצהרת נגישות</a>
+        </div>
+    </footer>
+
+    <script>
+        // מילון תרגומים
+        const translations = {
+            en: {
+                subtitle: "The smart way to control your money, everyday and on your travels.",
+                cta: "Coming Soon to App Stores",
+                aboutTitle: "About BALANCE",
+                aboutP1: "Meet BALANCE – your smart partner for money management.",
+                aboutP2: "Whether you're managing daily expenses or planning your next vacation, BALANCE is designed to give you full, simple, and smart control over your budget.",
+                aboutP3: "The app combines advanced budget management tools, voice recognition for quick expense entry, and AI that provides accurate and personalized budget estimates. With multi-currency support, full cloud synchronization, and a smart alert system to keep you on the right financial track – we're here to make managing your money simple and effective.",
+                aboutP4: "Your privacy and transparency are our top priority. For more information on how we use your data, your rights, and the app's commitments, please review our legal documents:",
+                aboutP5: "Data Transparency: BALANCE requests access to certain user data, such as your Google account for secure authentication and login. We only request the minimum data necessary to provide these features, and your financial data remains strictly under your control.",
+                aboutSlogan: "BALANCE – Managing money smartly, anywhere, anytime.",
+                feat1Title: "Trip Radar",
+                feat1Desc: "Precise planning and budgeting for your next trip. Know exactly how much you have left to spend.",
+                feat2Title: "AI Concierge",
+                feat2Desc: "A smart financial assistant that analyzes your expenses and provides personalized insights.",
+                feat3Title: "Total Control",
+                feat3Desc: "Custom categories, daily tracking, and clear statistics to sort out the mess.",
+                feat4Title: "Voice Recognition",
+                feat4Desc: "Quick and simple expense entry using voice commands.",
+                feat5Title: "Multi-Currency",
+                feat5Desc: "Support for various currencies, ideal for travelers and global business people.",
+                feat6Title: "Cloud Sync",
+                feat6Desc: "Your data is always backed up and synced across all your devices.",
+                feat7Title: "Smart Alerts",
+                feat7Desc: "An alert system to help you meet your goals and stay on the right financial track.",
+                galleryTitle: "Sneak Peek",
+                support: "Need help? Contact us:",
+                privacy: "Privacy Policy",
+                terms: "Terms of Service",
+                accessibility: "Accessibility Statement"
+            },
+            he: {
+                subtitle: "הדרך החכמה לשלוט בכסף שלך, ביום-יום ובטיולים.",
+                cta: "בקרוב בחנויות האפליקציות",
+                aboutTitle: "אודות BALANCE",
+                aboutP1: "הכירו את BALANCE – השותף החכם שלכם לניהול כספים.",
+                aboutP2: "בין אם אתם מנהלים את ההוצאות השוטפות ביומיום או מתכננים את החופשה הבאה שלכם, BALANCE נועדה להעניק לכם שליטה מלאה, פשוטה וחכמה על התקציב שלכם.",
+                aboutP3: "האפליקציה משלבת כלי ניהול תקציב מתקדמים, זיהוי קולי להזנת הוצאות מהירה, ובינה מלאכותית המעניקה לכם הערכות תקציב מדויקות ומותאמות אישית. עם תמיכה בריבוי מטבעות, סנכרון מלא לענן ומערכת התראות חכמה שתעזור לכם להישאר במסלול הפיננסי הנכון – אנחנו כאן כדי להפוך את ניהול הכסף שלכם לפעולה פשוטה ואפקטיבית.",
+                aboutP4: "הפרטיות והשקיפות שלכם בראש סדר העדיפויות שלנו. למידע נוסף על אופן השימוש במידע שלכם, הזכויות שלכם והתחייבויות האפליקציה, אתם מוזמנים לעיין במסמכים המשפטיים שלנו:",
+                aboutP5: "שקיפות מידע: BALANCE דורשת גישה לנתונים מסוימים, כגון חשבון הגוגל שלך לאימות והתחברות מאובטחת לאפליקציה. אנו מבקשים רק את המידע המינימלי הדרוש לאספקת תכונות אלו, והמידע הפיננסי שלך נשאר בשליטתך הבלעדית.",
+                aboutSlogan: "BALANCE – מנהלים כסף בחוכמה, בכל מקום ובכל זמן.",
+                feat1Title: "Trip Radar",
+                feat1Desc: "תכנון ותקצוב מדויק לטיול הבא שלך. דע בדיוק כמה נשאר לך לבזבז בכל רגע נתון.",
+                feat2Title: "AI Concierge",
+                feat2Desc: "עוזר פיננסי חכם שמנתח את ההוצאות שלך ומספק תובנות מותאמות אישית.",
+                feat3Title: "שליטה מלאה",
+                feat3Desc: "קטגוריות מותאמות אישית, מעקב יומיומי וסטטיסטיקות ברורות שעושות סדר בבלגן.",
+                feat4Title: "זיהוי קולי",
+                feat4Desc: "הזנת הוצאות מהירה ופשוטה באמצעות פקודות קוליות.",
+                feat5Title: "ריבוי מטבעות",
+                feat5Desc: "תמיכה במגוון מטבעות, אידיאלי למטיילים ולאנשי עסקים גלובליים.",
+                feat6Title: "סנכרון לענן",
+                feat6Desc: "הנתונים שלכם מגובים תמיד ומסונכרנים בין כל המכשירים שלכם.",
+                feat7Title: "התראות חכמות",
+                feat7Desc: "מערכת התראות שתעזור לכם לעמוד ביעדים ולהישאר במסלול הפיננסי הנכון.",
+                galleryTitle: "הצצה לאפליקציה",
+                support: "זקוקים לעזרה? צרו קשר:",
+                privacy: "מדיניות פרטיות",
+                terms: "תנאי שימוש",
+                accessibility: "הצהרת נגישות"
+            },
+            ar: {
+                subtitle: "الطريقة الذكية للتحكم في أموالك، كل يوم وفي رحلاتك.",
+                cta: "قريباً في متاجر التطبيقات",
+                aboutTitle: "حول BALANCE",
+                aboutP1: "تعرف على BALANCE - شريكك الذكي لإدارة الأموال.",
+                aboutP2: "سواء كنت تدير نفقاتك اليومية أو تخطط لعطلتك القادمة، تم تصميم BALANCE ليمنحك تحكماً كاملاً وبسيطاً وذكياً في ميزانيتك.",
+                aboutP3: "يجمع التطبيق بين أدوات إدارة الميزانية المتقدمة، والتعرف على الصوت لإدخال النفقات السريع، والذكاء الاصطناعي الذي يوفر تقديرات دقيقة ومخصصة للميزانية. مع دعم العملات المتعددة، والمزامنة السحابية الكاملة، ونظام التنبيهات الذكي لإبقائك على المسار المالي الصحيح - نحن هنا لجعل إدارة أموالك بسيطة وفعالة.",
+                aboutP4: "خصوصيتك وشفافيتك هي أولويتنا القصوى. لمزيد من المعلومات حول كيفية استخدامنا لبياناتك، وحقوقك، والتزامات التطبيق، يرجى مراجعة مستنداتنا القانونية:",
+                aboutP5: "شفافية البيانات: يتطلب BALANCE الوصول إلى بيانات معينة للمستخدم، مثل حساب Google الخاص بك للمصادقة وتسجيل الدخول الآمن. نحن نطلب فقط الحد الأدنى من البيانات اللازمة لتوفير هذه الميزات، وتبقى بياناتك المالية تحت سيطرتك.",
+                aboutSlogan: "BALANCE - إدارة الأموال بذكاء، في أي مكان وزمان.",
+                feat1Title: "رادار الرحلات",
+                feat1Desc: "تخطيط وميزانية دقيقة لرحلتك القادمة. اعرف بالضبط كم يتبقى لديك للإنفاق.",
+                feat2Title: "مساعد الذكاء الاصطناعي",
+                feat2Desc: "مساعد مالي ذكي يحلل نفقاتك ويقدم رؤى مخصصة.",
+                feat3Title: "تحكم كامل",
+                feat3Desc: "فئات مخصصة، تتبع يومي، وإحصائيات واضحة لترتيب الفوضى.",
+                feat4Title: "التعرف على الصوت",
+                feat4Desc: "إدخال سريع وبسيط للنفقات باستخدام الأوامر الصوتية.",
+                feat5Title: "عملات متعددة",
+                feat5Desc: "دعم لعملات مختلفة، مثالي للمسافرين ورجال الأعمال حول العالم.",
+                feat6Title: "مزامنة سحابية",
+                feat6Desc: "يتم نسخ بياناتك احتياطياً ومزامنتها دائماً عبر جميع أجهزتك.",
+                feat7Title: "تنبيهات ذكية",
+                feat7Desc: "نظام تنبيهات لمساعدتك في تلبية أهدافك والبقاء على المسار المالي الصحيح.",
+                galleryTitle: "نظرة خاطفة",
+                support: "هل تحتاج إلى مساعدة؟ اتصل بنا:",
+                privacy: "سياسة الخصوصية",
+                terms: "شروط الخدمة",
+                accessibility: "بيان إمكانية الوصول"
+            }
+        };
+
+        // זיהוי שפת הדפדפן
+        function setLanguage(selectedLang) {
+            let langKey = selectedLang;
+            if (!langKey) {
+                // Auto detect if no language provided
+                const userLang = navigator.language || navigator.userLanguage;
+                if (userLang.toLowerCase().startsWith('he')) langKey = 'he';
+                else if (userLang.toLowerCase().startsWith('ar')) langKey = 'ar';
+                else langKey = 'en';
+            }
+
+            const isRtl = (langKey === 'he' || langKey === 'ar');
+
+            // עדכון כיוון המסמך
+            document.getElementById('html-root').setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+            document.getElementById('html-root').setAttribute('lang', langKey);
+
+            // החלפת הטקסטים לפי המילון
+            document.querySelectorAll('[data-i18n]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n');
+                if (translations[langKey] && translations[langKey][key]) {
+                    elem.innerText = translations[langKey][key];
+                }
+            });
+
+            // עדכון הכפתורים
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === langKey) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // עדכון קישורים משפטיים לפי שפה
+            const links = ['privacy', 'terms', 'access'];
+            links.forEach(id => {
+                const pageName = id === 'access' ? 'accessibility' : id;
+                const el1 = document.getElementById('link-' + id);
+                if(el1) el1.href = `legal/${pageName}.html?lang=${langKey}`;
+                const el2 = document.getElementById('footer-' + id);
+                if(el2) el2.href = `legal/${pageName}.html?lang=${langKey}`;
+            });
+        }
+
+        // הפעלת הפונקציה מיד כשהדף עולה
+        window.onload = () => setLanguage();
+    </script>
+</body>
+</html>

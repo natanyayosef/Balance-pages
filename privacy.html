@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALANCE | Privacy Policy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800&family=Poppins:wght@300;400;700;800&display=swap');
+
+        :root {
+            --primary: #00e5ff;
+            --secondary: #0077ff;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Heebo', 'Poppins', sans-serif;
+        }
+
+        html, body {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            color: var(--dark);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
+        }
+
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+        .shape1 { background: var(--primary); width: 400px; height: 400px; top: -100px; right: -100px; }
+        .shape2 { background: var(--secondary); width: 500px; height: 500px; bottom: 100px; left: -150px; }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        [dir="ltr"] .lang-switcher {
+            right: auto;
+            left: 20px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--dark);
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0, 229, 255, 0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo {
+            width: 80px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .logo:hover { transform: scale(1.05); }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--secondary), #00b4d8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .legal-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 60px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #475569;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .legal-content h1, .legal-content h2, .legal-content h3 {
+            color: var(--dark);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .legal-content h1:first-child { margin-top: 0; }
+        .legal-content p { margin-bottom: 15px; }
+        .legal-content ul, .legal-content ol { margin-bottom: 15px; margin-inline-start: 20px; }
+
+        /* Footer */
+        .footer {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-radius: 30px 30px 0 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            margin-top: 50px;
+        }
+
+        .contact-email {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .legal-links a {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .legal-links a:hover { color: var(--secondary); }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .header {
+                margin-top: 70px;
+            }
+            .lang-switcher {
+                top: 10px;
+                right: 10px;
+                gap: 5px;
+            }
+            [dir="ltr"] .lang-switcher {
+                left: 10px;
+                right: auto;
+            }
+            .lang-btn {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+
+    <div class="lang-switcher">
+        <button onclick="setLanguage('he')" class="lang-btn" data-lang="he">עברית</button>
+        <button onclick="setLanguage('en')" class="lang-btn" data-lang="en">English</button>
+        <button onclick="setLanguage('ar')" class="lang-btn" data-lang="ar">العربية</button>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <a href="../about.html">
+                <img src="../images/logo.png" alt="BALANCE Logo" class="logo">
+            </a>
+            <h1 data-i18n="mainTitle">Privacy Policy</h1>
+        </header>
+
+        <div class="legal-content" id="content-container">
+            <!-- Dynamic content injected here -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a href="mailto:supportnftbalance@gmail.com" class="contact-email">supportnftbalance@gmail.com</a>
+        
+        <div class="legal-links">
+            <a href="privacy.html" id="link-privacy" data-i18n="navPrivacy">Privacy Policy</a>
+            <a href="terms.html" id="link-terms" data-i18n="navTerms">Terms of Service</a>
+            <a href="accessibility.html" id="link-access" data-i18n="navAccess">Accessibility Statement</a>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            "en": {
+                        "mainTitle": "Privacy Policy",
+                        "contentHtml": "<h1>Privacy Policy</h1>\n<h2>1. Data Collection</h2>\n<p>We collect information to provide, improve, and operate our services effectively. The types of data we collect include:</p>\n<h1>Account Information:</h1>\n<p>When creating an account, the user’s email address is collected for identification, authentication, and account management.</p>\n<h1>Financial Data:</h1>\n<p>The system allows users to manage expenses, therefore data such as expense amounts, currency types, expenses names, and categories are collected.</p>\n<h1>Travel Plans:</h1>\n<p>When using travel mode, information such as travel destinations, planned budgets, and number of participants is collected.</p>\n<h1>Usage Data:</h1>\n<p>To improve the system and user experience, statistical data such as the number of app logins is collected.</p>\n<h1>Technical Support:</h1>\n<p>When users contact us via the 'Contact Us' form, the content of the inquiry is stored to provide support and improve the service.</p>\n<h2>2. Security</h2>\n<p>We implement advanced security measures to protect user data:</p>\n<h1>Data Isolation (RLS):</h1>\n<p>The system uses Row Level Security (RLS), ensuring that each user can only access their own data.</p>\n<h1>Encryption:</h1>\n<p>All data is stored on secure servers and transmitted by SSL/TLS encryption protocols.</p>\n<h1>Passwords:</h1>\n<p>User passwords are encrypted and are not accessible, even to system administrators.</p>\n<h2>3. Data Retention & Deletion</h2>\n<h1>Users have full control over their personal data:</h1>\n<p>At any time, users can choose to delete their account through the application.</p>\n<p>Upon account deletion, all associated data—including expenses, categories, trips, and profile information—is permanently deleted from the system.</p>\n<p>This deletion is final and cannot be undone.</p>\n<h2>4. Third-Party Services</h2>\n<p>The system uses third-party cloud infrastructure services for data storage, security, and user management.</p>\n<p>These services comply with high standards of data protection and privacy.</p>",
+                        "navPrivacy": "Privacy Policy",
+                        "navTerms": "Terms of Service",
+                        "navAccess": "Accessibility Statement"
+            },
+            "he": {
+                        "mainTitle": "מדיניות פרטיות",
+                        "contentHtml": "<h1>מדיניות פרטיות</h1>\n<h2>1. איסוף נתונים</h2>\n<p>אנו אוספים מידע במטרה לספק, לשפר ולהפעיל את שירותינו בצורה יעילה. סוגי הנתונים שאנו אוספים כוללים:</p>\n<ul>\n<li>פרטי חשבון: בעת יצירת חשבון, כתובת הדוא\"ל של המשתמש נאספת לצורכי זיהוי, אימות וניהול חשבון.</li>\n<li>נתונים פיננסיים: המערכת מאפשרת למשתמשים לנהל הוצאות, ולכן נאספים נתונים כגון סכומי הוצאות, סוגי מטבעות, שמות ההוצאות והקטגוריות שלהן.</li>\n<li>תכניות טיול: בעת שימוש ב\"מצב טיול\" (Trip Mode), נאסף מידע כגון יעדי נסיעה ותקציבים מתוכננים.</li>\n<li>נתוני שימוש: כדי לשפר את המערכת וחוויית המשתמש, נאספים נתונים סטטיסטיים כגון מספר הכניסות לאפליקציה.</li>\n<li>תמיכה טכנית: כאשר משתמשים פונים אלינו דרך טופס \"צור קשר\", תוכן הפנייה נשמר כדי לספק תמיכה ולשפר את השירות.</li>\n</ul>\n<h2>2. אבטחה</h2>\n<p>אנו מיישמים אמצעי אבטחה מתקדמים כדי להגן על נתוני המשתמשים:</p>\n<ul>\n<li>הפרדת נתונים (RLS): המערכת משתמשת ב-Row Level Security) RLS), המבטיחה שכל משתמש יוכל לגשת לנתונים שלו בלבד.</li>\n<li>הצפנה: כל הנתונים מאוחסנים בשרתים מאובטחים ומועברים באמצעות פרוטוקולי הצפנה מסוג SSL/TLS.</li>\n<li>סיסמאות: סיסמאות המשתמשים מוצפנות ואינן נגישות לאיש, גם לא למנהלי המערכת.</li>\n</ul>\n<h2>3. שמירת נתונים ומחיקתם</h2>\n<h1>למשתמשים יש שליטה מלאה על הנתונים האישיים שלהם:</h1>\n<ul>\n<li>בכל עת, משתמשים יכולים לבחור למחוק את חשבונם דרך האפליקציה.</li>\n<li>עם מחיקת החשבון, כל הנתונים המשויכים אליו – לרבות הוצאות, קטגוריות, טיולים ופרטי פרופיל – נמחקים לצמיתות מהמערכת.</li>\n<li>מחיקה זו היא סופית ולא ניתן לבטלה.</li>\n</ul>\n<h2>4. שירותי צד שלישי</h2>\n<p>המערכת עושה שימוש בשירותי תשתית ענן של צד שלישי עבור אחסון נתונים, אבטחה וניהול משתמשים. שירותים אלו עומדים בסטנדרטים גבוהים של הגנה על נתונים ופרטיות.</p>",
+                        "navPrivacy": "מדיניות פרטיות",
+                        "navTerms": "תנאי שימוש",
+                        "navAccess": "הצהרת נגישות"
+            },
+            "ar": {
+                        "mainTitle": "سياسة الخصوصية",
+                        "contentHtml": "<h1>سياسة الخصوصية</h1>\n<h2>1. جمع البيانات</h2>\n<p>نحن نجمع المعلومات بهدف توفير خدماتنا، تحسينها، وتشغيلها بفعالية. تشمل أنواع البيانات التي نجمعها ما يلي:</p>\n<ul>\n<li>معلومات الحساب: عند إنشاء حساب، يتم جمع عنوان البريد الإلكتروني للمستخدم لأغراض التعريف، التحقق، وإدارة الحساب.</li>\n<li>البيانات المالية: يتيح النظام للمستخدمين إدارة مصاريفهم، لذا يتم جمع بيانات مثل مبالغ المصاريف، أنواع العملات، أسماء المصاريف، وفئاتها.</li>\n<li>خطط السفر: عند استخدام \"وضع السفر\" (Trip Mode)، يتم جمع معلومات مثل وجهات السفر، الميزانيات المخطط لها، وعدد المشاركين.</li>\n<li>بيانات الاستخدام: لتحسين النظام وتجربة المستخدم، يتم جمع بيانات إحصائية مثل عدد مرات تسجيل الدخول إلى التطبيق.</li>\n<li>الدعم الفني: عندما يتواصل معنا المستخدمون عبر نموذج \"اتصل بنا\"، يتم تخزين محتوى الاستفسار لتقديم الدعم وتحسين الخدمة.</li>\n</ul>\n<h2>2. الأمان</h2>\n<p>نحن نطبق تدابير أمنية متقدمة لحماية بيانات المستخدمين:</p>\n<ul>\n<li>عزل البيانات (RLS): يستخدم النظام تقنية \"أمن مستوى الصف\" (Row Level Security - RLS)، مما يضمن أن كل مستخدم يمكنه الوصول إلى بياناته الخاصة فقط.</li>\n<li>التشفير: يتم تخزين جميع البيانات على خوادم آمنة ونقلها عبر بروتوكولات التشفير SSL/TLS.</li>\n<li>كلمات المرور: يتم تشفير كلمات مرور المستخدمين ولا يمكن الوصول إليها، حتى من قبل مسؤولي النظام.</li>\n</ul>\n<h2>3. الاحتفاظ بالبيانات وحذفها</h2>\n<p>يتمتع المستخدمون بالتحكم الكامل في بياناتهم الشخصية:</p>\n<ul>\n<li>يمكن للمستخدمين في أي وقت اختيار حذف حسابهم من خلال التطبيق.</li>\n<li>عند حذف الحساب، يتم حذف جميع البيانات المرتبطة به بشكل دائم من النظام – بما في ذلك المصاريف، الفئات، الرحلات، ومعلومات الملف الشخصي.</li>\n<li>عملية الحذف هذه نهائية ولا يمكن التراجع عنها.</li>\n</ul>\n<h2>4. خدمات الطرف الثالث</h2>\n<p>يستخدم النظام خدمات البنية التحتية السحابية التابعة لأطراف ثالثة لتخزين البيانات، وتوفير الأمن، وإدارة المستخدمين. تلتزم هذه الخدمات بمعايير عالية لحماية البيانات والخصوصية.</p>",
+                        "navPrivacy": "سياسة الخصوصية",
+                        "navTerms": "شروط الخدمة",
+                        "navAccess": "بيان إمكانية الوصول"
+            }
+};
+
+        function setLanguage(selectedLang) {
+            let langKey = selectedLang;
+            if (!langKey) {
+                const urlParams = new URLSearchParams(window.location.search);
+                langKey = urlParams.get('lang');
+            }
+            if (!langKey) {
+                const userLang = navigator.language || navigator.userLanguage;
+                if (userLang.toLowerCase().startsWith('he')) langKey = 'he';
+                else if (userLang.toLowerCase().startsWith('ar')) langKey = 'ar';
+                else langKey = 'en';
+            }
+
+            const isRtl = (langKey === 'he' || langKey === 'ar');
+
+            document.getElementById('html-root').setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+            document.getElementById('html-root').setAttribute('lang', langKey);
+
+            document.querySelectorAll('[data-i18n]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n');
+                if (translations[langKey] && translations[langKey][key]) {
+                    elem.innerText = translations[langKey][key];
+                }
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === langKey) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // update legal links
+            const links = ['privacy', 'terms', 'accessibility'];
+            links.forEach(id => {
+                const el = document.getElementById('link-' + (id==='accessibility'?'access':id));
+                if(el) el.href = `${id}.html?lang=${langKey}`;
+            });
+
+            // Update main content
+            const contentContainer = document.getElementById('content-container');
+            if (translations[langKey] && translations[langKey]['contentHtml']) {
+                contentContainer.innerHTML = translations[langKey]['contentHtml'];
+            }
+            
+            // Update URL without reloading
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('lang', langKey);
+            window.history.replaceState({}, '', newUrl);
+        }
+
+        window.onload = () => setLanguage();
+    </script>
+</body>
+</html>

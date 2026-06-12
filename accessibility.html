@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALANCE | Accessibility Statement</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800&family=Poppins:wght@300;400;700;800&display=swap');
+
+        :root {
+            --primary: #00e5ff;
+            --secondary: #0077ff;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Heebo', 'Poppins', sans-serif;
+        }
+
+        html, body {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            color: var(--dark);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
+        }
+
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+        .shape1 { background: var(--primary); width: 400px; height: 400px; top: -100px; right: -100px; }
+        .shape2 { background: var(--secondary); width: 500px; height: 500px; bottom: 100px; left: -150px; }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        [dir="ltr"] .lang-switcher {
+            right: auto;
+            left: 20px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--dark);
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0, 229, 255, 0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo {
+            width: 80px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .logo:hover { transform: scale(1.05); }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--secondary), #00b4d8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .legal-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 60px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #475569;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .legal-content h1, .legal-content h2, .legal-content h3 {
+            color: var(--dark);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .legal-content h1:first-child { margin-top: 0; }
+        .legal-content p { margin-bottom: 15px; }
+        .legal-content ul, .legal-content ol { margin-bottom: 15px; margin-inline-start: 20px; }
+
+        /* Footer */
+        .footer {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-radius: 30px 30px 0 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            margin-top: 50px;
+        }
+
+        .contact-email {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .legal-links a {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .legal-links a:hover { color: var(--secondary); }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .header {
+                margin-top: 70px;
+            }
+            .lang-switcher {
+                top: 10px;
+                right: 10px;
+                gap: 5px;
+            }
+            [dir="ltr"] .lang-switcher {
+                left: 10px;
+                right: auto;
+            }
+            .lang-btn {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+
+    <div class="lang-switcher">
+        <button onclick="setLanguage('he')" class="lang-btn" data-lang="he">עברית</button>
+        <button onclick="setLanguage('en')" class="lang-btn" data-lang="en">English</button>
+        <button onclick="setLanguage('ar')" class="lang-btn" data-lang="ar">العربية</button>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <a href="../about.html">
+                <img src="../images/logo.png" alt="BALANCE Logo" class="logo">
+            </a>
+            <h1 data-i18n="mainTitle">Accessibility Statement</h1>
+        </header>
+
+        <div class="legal-content" id="content-container">
+            <!-- Dynamic content injected here -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a href="mailto:supportnftbalance@gmail.com" class="contact-email">supportnftbalance@gmail.com</a>
+        
+        <div class="legal-links">
+            <a href="privacy.html" id="link-privacy" data-i18n="navPrivacy">Privacy Policy</a>
+            <a href="terms.html" id="link-terms" data-i18n="navTerms">Terms of Service</a>
+            <a href="accessibility.html" id="link-access" data-i18n="navAccess">Accessibility Statement</a>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            "en": {
+                        "mainTitle": "Accessibility Statement",
+                        "contentHtml": "<h1>Accessibility Statement – BALANCE App</h1>\n<p>At BALANCE, we believe that technology is for everyone. We are committed to making our financial services accessible to all users, regardless of physical or technological limitations. However, we are aware that the application is currently under development and acknowledge that it does not yet fully meet the WCAG 2.1 Level AA accessibility standards.</p>\n<p>Current Status Currently, the application includes only basic accessibility adjustments, such as setting accessibilityLabel and hitSlop for modal close buttons. We recognize significant gaps, including:</p>\n<ul>\n<li>Limited compatibility with screen readers (VoiceOver/TalkBack).</li>\n<li>Lack of full support for large font sizes, high-contrast colors, and keyboard navigation.</li>\n<li>Complex components (such as voice recording and forms) that are not yet fully optimized for accessibility.</li>\n</ul>\n<p>Our Commitment We view accessibility as a strategic goal and are committed to improving our app's accessibility as part of our ongoing development process. We plan to conduct a comprehensive accessibility audit, implement wide-scale accessibility props, and perform in-depth compatibility testing in the near future.</p>\n<p>Accessibility Coordinator & Contact Information We welcome feedback, questions, or reports regarding accessibility difficulties. If you encounter an issue or have suggestions for improvement, please contact us:</p>\n<ul>\n<li>Contact Person: Yosef</li>\n<li>Email: supportnftbalance@gmail.com</li>\n</ul>\n<p>We strive to respond to all inquiries as promptly as possible.</p>\n<h1>Statement Last Updated: June 4, 2026</h1>",
+                        "navPrivacy": "Privacy Policy",
+                        "navTerms": "Terms of Service",
+                        "navAccess": "Accessibility Statement"
+            },
+            "he": {
+                        "mainTitle": "הצהרת נגישות",
+                        "contentHtml": "<h1>הצהרת נגישות – אפליקציית BALANCE</h1>\n<p>אנו ב-BALANCE מאמינים כי טכנולוגיה נועדה לכולם, ושואפים להנגיש את השירותים הפיננסיים שלנו לכלל המשתמשים, ללא תלות במגבלות פיזיות או טכנולוגיות. עם זאת, אנו מודעים לכך שהאפליקציה נמצאת בשלבי פיתוח ומודים כי היא אינה עומדת כיום במלוא דרישות תקן הנגישות WCAG 2.1 ברמה AA.</p>\n<h1>המצב הקיים</h1>\n<p>נכון להיום, האפליקציה כוללת התאמות נגישות בסיסיות בלבד, הכוללות הגדרת תוויות נגישות (accessibilityLabel) ואזורי לחיצה מוגדלים (hitSlop) לכפתורי סגירה בממשק. אנו מודעים לקיומם של פערים משמעותיים, ביניהם:</p>\n<ul>\n<li>תאימות מוגבלת לקוראי מסך (VoiceOver/TalkBack).</li>\n<li>חוסר בהתאמה מלאה למצבי הגדלת גופן, ניגודיות צבעים וניווט באמצעות מקלדת.</li>\n<li>רכיבים מורכבים (כמו הקלטה קולית וטפסים) שטרם עברו התאמה מלאה לשימוש נגיש.</li>\n</ul>\n<h1>המחויבות שלנו</h1>\n<p>אנו רואים בנגישות יעד אסטרטגי ומתחייבים לפעול לשיפור הנגישות באפליקציה כחלק מתהליך הפיתוח המתמשך שלנו. אנו מתכננים לבצע בעתיד סקר נגישות מקיף, הטמעה רוחבית של תגיות נגישות (Accessibility Props) ובדיקות תאימות מעמיקות.</p>\n<h1>רכז נגישות ויצירת קשר</h1>\n<p>אנו מקבלים בברכה משוב, שאלות או דיווחים על קשיים בנגישות האפליקציה. אם נתקלתם בבעיה או אם יש לכם הצעות לשיפור, נשמח אם תפנו אלינו:</p>\n<ul>\n<li>שם איש קשר: יוסף</li>\n<li>דוא\"ל: supportnftbalance@gmail.com</li>\n</ul>\n<p>אנו משתדלים לענות על כל פנייה בהקדם האפשרי.</p>\n<h1>תאריך עדכון הצהרה: 4 ביוני, 2026</h1>",
+                        "navPrivacy": "מדיניות פרטיות",
+                        "navTerms": "תנאי שימוש",
+                        "navAccess": "הצהרת נגישות"
+            },
+            "ar": {
+                        "mainTitle": "بيان إمكانية الوصول",
+                        "contentHtml": "<h1>بيان إمكانية الوصول – تطبيق BALANCE</h1>\n<p>نؤمن في BALANCE أن التكنولوجيا وُجدت للجميع، ونسعى لجعل خدماتنا المالية متاحة لجميع المستخدمين، بغض النظر عن القيود الجسدية أو التكنولوجية. ومع ذلك، نحن ندرك أن التطبيق لا يزال في مراحل التطوير، ونقر بأنه لا يستوفي حالياً بشكل كامل معايير إمكانية الوصول WCAG 2.1 مستوى AA.</p>\n<p>الوضع الحالي حتى اليوم، يتضمن التطبيق تعديلات أساسية فقط لإمكانية الوصول، مثل تحديد accessibilityLabel و hitSlop لأزرار الإغلاق في الواجهات. نحن ندرك وجود فجوات كبيرة، منها:</p>\n<ul>\n<li>توافق محدود مع قارئات الشاشة (VoiceOver/TalkBack).</li>\n<li>نقص في التوافق الكامل مع إعدادات تكبير الخط، تباين الألوان، والتنقل عبر لوحة المفاتيح.</li>\n<li>عناصر معقدة (مثل تسجيل الصوت والنماذج) لم يتم تحسينها بالكامل للاستخدام المتاح.</li>\n</ul>\n<p>التزامنا نحن نعتبر إمكانية الوصول هدفاً استراتيجياً، ونتعهد بالعمل على تحسين إمكانية الوصول في التطبيق كجزء من عملية التطوير المستمرة. نخطط لإجراء تدقيق شامل لإمكانية الوصول في المستقبل، وتطبيق واسع النطاق لخصائص إمكانية الوصول (Accessibility Props)، وإجراء اختبارات توافق متعمقة.</p>\n<p>منسق إمكانية الوصول ومعلومات الاتصال نرحب بأي ملاحظات، أسئلة، أو تقارير تتعلق بصعوبات في الوصول إلى التطبيق. إذا واجهت مشكلة أو كانت لديك اقتراحات للتحسين، يسعدنا تواصلك معنا:</p>\n<ul>\n<li>اسم جهة الاتصال: يوسف (Yosef)</li>\n<li>البريد الإلكتروني: supportnftbalance@gmail.com</li>\n</ul>\n<p>نحن نسعى للرد على جميع الاستفسارات في أقرب وقت ممكن.</p>\n<h1>تاريخ آخر تحديث للبيان: 4 يونيو 2026</h1>",
+                        "navPrivacy": "سياسة الخصوصية",
+                        "navTerms": "شروط الخدمة",
+                        "navAccess": "بيان إمكانية الوصول"
+            }
+};
+
+        function setLanguage(selectedLang) {
+            let langKey = selectedLang;
+            if (!langKey) {
+                const urlParams = new URLSearchParams(window.location.search);
+                langKey = urlParams.get('lang');
+            }
+            if (!langKey) {
+                const userLang = navigator.language || navigator.userLanguage;
+                if (userLang.toLowerCase().startsWith('he')) langKey = 'he';
+                else if (userLang.toLowerCase().startsWith('ar')) langKey = 'ar';
+                else langKey = 'en';
+            }
+
+            const isRtl = (langKey === 'he' || langKey === 'ar');
+
+            document.getElementById('html-root').setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+            document.getElementById('html-root').setAttribute('lang', langKey);
+
+            document.querySelectorAll('[data-i18n]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n');
+                if (translations[langKey] && translations[langKey][key]) {
+                    elem.innerText = translations[langKey][key];
+                }
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === langKey) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // update legal links
+            const links = ['privacy', 'terms', 'accessibility'];
+            links.forEach(id => {
+                const el = document.getElementById('link-' + (id==='accessibility'?'access':id));
+                if(el) el.href = `${id}.html?lang=${langKey}`;
+            });
+
+            // Update main content
+            const contentContainer = document.getElementById('content-container');
+            if (translations[langKey] && translations[langKey]['contentHtml']) {
+                contentContainer.innerHTML = translations[langKey]['contentHtml'];
+            }
+            
+            // Update URL without reloading
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('lang', langKey);
+            window.history.replaceState({}, '', newUrl);
+        }
+
+        window.onload = () => setLanguage();
+    </script>
+</body>
+</html>

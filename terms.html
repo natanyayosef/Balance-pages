@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALANCE | Terms of Service</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800&family=Poppins:wght@300;400;700;800&display=swap');
+
+        :root {
+            --primary: #00e5ff;
+            --secondary: #0077ff;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Heebo', 'Poppins', sans-serif;
+        }
+
+        html, body {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            color: var(--dark);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
+        }
+
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+        .shape1 { background: var(--primary); width: 400px; height: 400px; top: -100px; right: -100px; }
+        .shape2 { background: var(--secondary); width: 500px; height: 500px; bottom: 100px; left: -150px; }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        [dir="ltr"] .lang-switcher {
+            right: auto;
+            left: 20px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--dark);
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0, 229, 255, 0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo {
+            width: 80px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .logo:hover { transform: scale(1.05); }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--secondary), #00b4d8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .legal-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 60px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #475569;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .legal-content h1, .legal-content h2, .legal-content h3 {
+            color: var(--dark);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .legal-content h1:first-child { margin-top: 0; }
+        .legal-content p { margin-bottom: 15px; }
+        .legal-content ul, .legal-content ol { margin-bottom: 15px; margin-inline-start: 20px; }
+
+        /* Footer */
+        .footer {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-radius: 30px 30px 0 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            margin-top: 50px;
+        }
+
+        .contact-email {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .legal-links a {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .legal-links a:hover { color: var(--secondary); }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .header {
+                margin-top: 70px;
+            }
+            .lang-switcher {
+                top: 10px;
+                right: 10px;
+                gap: 5px;
+            }
+            [dir="ltr"] .lang-switcher {
+                left: 10px;
+                right: auto;
+            }
+            .lang-btn {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+
+    <div class="lang-switcher">
+        <button onclick="setLanguage('he')" class="lang-btn" data-lang="he">עברית</button>
+        <button onclick="setLanguage('en')" class="lang-btn" data-lang="en">English</button>
+        <button onclick="setLanguage('ar')" class="lang-btn" data-lang="ar">العربية</button>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <a href="../about.html">
+                <img src="../images/logo.png" alt="BALANCE Logo" class="logo">
+            </a>
+            <h1 data-i18n="mainTitle">Terms of Service</h1>
+        </header>
+
+        <div class="legal-content" id="content-container">
+            <!-- Dynamic content injected here -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a href="mailto:supportnftbalance@gmail.com" class="contact-email">supportnftbalance@gmail.com</a>
+        
+        <div class="legal-links">
+            <a href="privacy.html" id="link-privacy" data-i18n="navPrivacy">Privacy Policy</a>
+            <a href="terms.html" id="link-terms" data-i18n="navTerms">Terms of Service</a>
+            <a href="accessibility.html" id="link-access" data-i18n="navAccess">Accessibility Statement</a>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            "en": {
+                        "mainTitle": "Terms of Service",
+                        "contentHtml": "<p>Terms of Service and End User License Agreement (EULA)</p>\n<h1>Last Updated: June 2, 2026 App Name: BALANCE</h1>\n<p>Welcome to BALANCE! These Terms of Service and End User License Agreement (\"Terms\") govern your use of the BALANCE mobile application (\"App\"). By downloading, installing, or using the App, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the App.</p>\n<h2>1. Financial and AI Disclaimer (Important)</h2>\n<p>BALANCE is a personal finance tracking and budgeting tool. The App does not provide professional financial, legal, or tax advice.</p>\n<ul>\n<li>All calculations, currency conversions, and budget estimations are provided for informational purposes only.</li>\n<li>Features utilizing Artificial Intelligence (AI), such as the Trip Estimator or AI Concierge, generate responses based on predictive models. These estimations may not be 100% accurate and should not be relied upon as factual or guaranteed pricing.</li>\n<li>You assume full responsibility for any financial decisions or actions you take based on the information provided by the App.</li>\n</ul>\n<h2>2. License to Use</h2>\n<p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to download, install, and use a copy of the App on a single mobile device that you own or control, solely for your personal, non-commercial use.</p>\n<h2>3. Prohibited Conduct (Apple & Google Requirements)</h2>\n<h1>You agree not to:</h1>\n<ul>\n<li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of the App.</li>\n<li>Modify, translate, adapt, or create derivative works from the App.</li>\n<li>Use the App for any illegal, fraudulent, or unauthorized purpose.</li>\n<li>Attempt to bypass, exploit, or disrupt the App's security, servers (including Supabase), or networks.</li>\n</ul>\n<h2>4. User Accounts and Security</h2>\n<p>To use certain features of the App, you may be required to create an account. You are responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account. We reserve the right to suspend or terminate accounts that violate these Terms. You may delete your account and associated data at any time via the \"Delete Account\" option within the App settings.</p>\n<h2>5. Limitation of Liability</h2>\n<p>To the fullest extent permitted by applicable law, in no event shall the developers or owners of BALANCE be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to financial losses, loss of data, or system failures, arising out of or in connection with your use of the App. The App is provided on an \"AS IS\" and \"AS AVAILABLE\" basis without warranties of any kind.</p>\n<h2>6. Third-Party Services</h2>\n<p>The App may integrate with third-party APIs (e.g., currency exchange rates, AI providers). We are not responsible for the availability, accuracy, or reliability of these third-party services.</p>\n<h2>7. Changes to these Terms</h2>\n<p>We may update these Terms from time to time. If we make material changes, we will notify you within the App. Continued use of the App after any such changes shall constitute your consent to such changes.</p>\n<h2>8. Contact Information</h2>\n<p>If you have any questions or concerns regarding these Terms, please contact us at: supportnftbalance@gmail.com</p>",
+                        "navPrivacy": "Privacy Policy",
+                        "navTerms": "Terms of Service",
+                        "navAccess": "Accessibility Statement"
+            },
+            "he": {
+                        "mainTitle": "תנאי שימוש",
+                        "contentHtml": "<h1>תנאי שימוש והסכם רישיון למשתמש (EULA)</h1>\n<h1>עדכון אחרון: 2 ביוני, 2026 שם האפליקציה: BALANCE</h1>\n<p>ברוכים הבאים ל-Balance! תנאים והסכם רישוי אלו (\"התנאים\") מסדירים את השימוש שלכם באפליקציה לנייד (\"האפליקציה\"). בהורדה, התקנה או שימוש באפליקציה, אתם מסכימים להיות מחויבים לתנאים אלו. אם אינכם מסכימים לתנאים אלו, אל תשתמשו באפליקציה.</p>\n<h2>1. הצהרת ויתור פיננסית ובינה מלאכותית (חשוב)</h2>\n<ul>\n<li>BALANCE היא כלי למעקב אחר תקציב וניהול כספים אישי. האפליקציה אינה מספקת ייעוץ פיננסי, משפטי או מס מקצועי.</li>\n<li>כל החישובים, המרת המטבעות והערכות התקציב ניתנים למטרות מידע בלבד.</li>\n<li>תכונות המשתמשות בבינה מלאכותית (AI), כגון הערכת תקציב לטיולים (Trip Estimator), מייצרות תשובות המבוססות על מודלים חיזויים. הערכות אלו אינן מדויקות ב-100% ואין להסתמך עליהן כמחירים עובדתיים או מובטחים.</li>\n<li>אתם נושאים באחריות המלאה לכל החלטה או פעולה פיננסית שאתם מבצעים על סמך המידע המסופק על ידי האפליקציה.</li>\n</ul>\n<h2>2. רישיון שימוש</h2>\n<p>בכפוף לעמידתכם בתנאים אלו, אנו מעניקים לכם רישיון מוגבל, לא בלעדי, לא ניתן להעברה, לא ניתן להמחאה, הניתן לביטול, להוריד, להתקין ולהשתמש בעותק של האפליקציה במכשיר נייד יחיד שבבעלותכם או בשליטתכם, לשימוש אישי ולא מסחרי בלבד.</p>\n<h2>3. התנהגות אסורה (דרישות Apple ו-Google)</h2>\n<h1>אתם מסכימים לא לבצע את הפעולות הבאות:</h1>\n<ul>\n<li>לבצע הנדסה לאחור (Reverse engineering), לפרק, או לנסות להפיק את קוד המקור של האפליקציה.</li>\n<li>לשנות, לתרגם, להתאים או ליצור עבודות נגזרות מהאפליקציה.</li>\n<li>להשתמש באפליקציה לכל מטרה לא חוקית, מרמתית או לא מורשית.</li>\n<li>לנסות לעקוף, לנצל או לשבש את האבטחה, השרתים (כולל Supabase) או הרשתות של האפליקציה.</li>\n</ul>\n<h2>4. חשבונות משתמש ואבטחה</h2>\n<p>כדי להשתמש בתכונות מסוימות באפליקציה, ייתכן שתידרשו ליצור חשבון. אתם אחראים לשמירה על סודיות פרטי ההתחברות שלכם ולכל הפעילויות המתרחשות תחת החשבון שלכם. אנו שומרים לעצמנו את הזכות להשעות או להפסיק חשבונות המפרים תנאים אלו. באפשרותכם למחוק את החשבון והנתונים המשויכים אליו בכל עת דרך אפשרות \"מחיקת חשבון\" בהגדרות האפליקציה.</p>\n<h2>5. הגבלת אחריות</h2>\n<p>במידה המרבית המותרת על פי החוק החל, בשום מקרה מפתחי או בעלי BALANCE לא יהיו אחראים לכל נזק עקיף, מקרי, מיוחד, תוצאתי או עונשי, לרבות אך לא מוגבל להפסדים כספיים, אובדן נתונים או כשלים במערכת, הנובעים מהשימוש שלכם באפליקציה. האפליקציה מסופקת על בסיס \"AS IS\" (כפי שהיא) ו-\"AS AVAILABLE\" (כפי שהיא זמינה) ללא כל אחריות מכל סוג שהוא.</p>\n<h2>6. שירותי צד שלישי</h2>\n<p>האפליקציה עשויה להשתלב עם ממשקי API של צד שלישי (למשל, שערי חליפין, ספקי בינה מלאכותית). אנו איננו אחראים לזמינות, לדיוק או לאמינות של שירותי צד שלישי אלו.</p>\n<h2>7. שינויים בתנאים אלו</h2>\n<p>אנו עשויים לעדכן תנאים אלו מעת לעת. אם נבצע שינויים מהותיים, נודיע לכם על כך בתוך האפליקציה. המשך השימוש באפליקציה לאחר שינויים אלו יהווה את הסכמתכם לשינויים אלו.</p>\n<h2>8. פרטי יצירת קשר</h2>\n<p>אם יש לכם שאלות או חששות בנוגע לתנאים אלו, אנא צרו עמנו קשר בכתובת: supportnftbalance@gmail.com</p>",
+                        "navPrivacy": "מדיניות פרטיות",
+                        "navTerms": "תנאי שימוש",
+                        "navAccess": "הצהרת נגישות"
+            },
+            "ar": {
+                        "mainTitle": "شروط الخدمة",
+                        "contentHtml": "<p>شروط الخدمة واتفاقية ترخيص المستخدم النهائي (EULA)</p>\n<h1>آخر تحديث: 2 يونيو 2026 اسم التطبيق: BALANCE</h1>\n<p>مرحباً بك في تطبيق BALANCE! تحكم \"شروط الخدمة واتفاقية ترخيص المستخدم النهائي\" هذه (\"الشروط\") استخدامك لتطبيق الهاتف المحمول BALANCE (\"التطبيق\"). من خلال تحميل التطبيق أو تثبيته أو استخدامه، فإنك توافق على الالتزام بهذه الشروط. إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام التطبيق.</p>\n<h2>1. إخلاء المسؤولية المالية والذكاء الاصطناعي (هام)</h2>\n<ul>\n<li>BALANCE هو أداة شخصية لتتبع المصاريف وإدارة الميزانية. التطبيق لا يقدم أي مشورة مالية أو قانونية أو ضريبية مهنية.</li>\n<li>جميع الحسابات، وتحويلات العملات، وتقديرات الميزانية مقدمة لأغراض إعلامية فقط.</li>\n<li>الميزات التي تستخدم الذكاء الاصطناعي (AI)، مثل \"مقدّر ميزانية الرحلات\" (Trip Estimator) أو المساعد الذكي، تولد استجابات بناءً على نماذج تنبؤية. قد لا تكون هذه التقديرات دقيقة بنسبة 100%، ولا ينبغي الاعتماد عليها كحقائق أو أسعار مضمونة.</li>\n<li>أنت تتحمل المسؤولية الكاملة عن أي قرارات أو إجراءات مالية تتخذها بناءً على المعلومات المقدمة من خلال التطبيق.</li>\n</ul>\n<h2>2. ترخيص الاستخدام</h2>\n<p>رهناً بامتثالك لهذه الشروط، نمنحك ترخيصاً محدوداً، غير حصري، غير قابل للتحويل، غير قابل للترخيص من الباطن، وقابل للإلغاء، لتحميل وتثبيت واستخدام نسخة من التطبيق على جهاز محمول واحد تمتلكه أو تسيطر عليه، وذلك للاستخدام الشخصي غير التجاري فقط.</p>\n<h2>3. السلوك المحظور (متطلبات Apple و Google)</h2>\n<h1>أنت توافق على عدم القيام بالآتي:</h1>\n<ul>\n<li>الهندسة العكسية، أو فك التجميع، أو محاولة اشتقاق الكود المصدري للتطبيق.</li>\n<li>تعديل، أو ترجمة، أو تكييف، أو إنشاء أعمال مشتقة من التطبيق.</li>\n<li>استخدام التطبيق لأي غرض غير قانوني أو احتيالي أو غير مصرح به.</li>\n<li>محاولة تجاوز أو استغلال أو تعطيل أمن التطبيق، أو خوادمه (بما في ذلك Supabase)، أو شبكاته.</li>\n</ul>\n<h2>4. حسابات المستخدمين والأمن</h2>\n<p>لاستخدام ميزات معينة في التطبيق، قد يُطلب منك إنشاء حساب. أنت مسؤول عن الحفاظ على سرية بيانات تسجيل الدخول الخاصة بك، وعن جميع الأنشطة التي تحدث تحت حسابك. نحتفظ بالحق في تعليق أو إنهاء الحسابات التي تنتهك هذه الشروط. يمكنك حذف حسابك والبيانات المرتبطة به في أي وقت من خلال خيار \"حذف الحساب\" في إعدادات التطبيق.</p>\n<h2>5. تحديد المسؤولية</h2>\n<p>إلى أقصى حد يسمح به القانون المعمول به، لا يتحمل مطورو أو مالكو تطبيق BALANCE بأي حال من الأحوال المسؤولية عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو تأديبية، بما في ذلك على سبيل المثال لا الحصر، الخسائر المالية، أو فقدان البيانات، أو فشل النظام، الناتجة عن استخدامك للتطبيق أو المرتبطة به. يتم توفير التطبيق على أساس \"كما هو\" (AS IS) و\"حسب توفره\" (AS AVAILABLE) دون أي ضمانات من أي نوع.</p>\n<h2>6. خدمات الطرف الثالث</h2>\n<p>قد يتكامل التطبيق مع واجهات برمجة تطبيقات (APIs) تابعة لأطراف ثالثة (مثل أسعار صرف العملات، أو مزودي خدمات الذكاء الاصطناعي). نحن لسنا مسؤولين عن توافر أو دقة أو موثوقية خدمات الأطراف الثالثة هذه.</p>\n<h2>7. تغييرات على هذه الشروط</h2>\n<p>قد نقوم بتحديث هذه الشروط من وقت لآخر. إذا قمنا بإجراء تغييرات جوهرية، فسنقوم بإخطارك داخل التطبيق. استمرار استخدامك للتطبيق بعد أي تغييرات من هذا القبيل يشكل موافقتك على هذه التغييرات.</p>\n<h2>8. معلومات الاتصال</h2>\n<p>إذا كانت لديك أي أسئلة أو استفسارات بخصوص هذه الشروط، يرجى التواصل معنا على: supportnftbalance@gmail.com</p>",
+                        "navPrivacy": "سياسة الخصوصية",
+                        "navTerms": "شروط الخدمة",
+                        "navAccess": "بيان إمكانية الوصول"
+            }
+};
+
+        function setLanguage(selectedLang) {
+            let langKey = selectedLang;
+            if (!langKey) {
+                const urlParams = new URLSearchParams(window.location.search);
+                langKey = urlParams.get('lang');
+            }
+            if (!langKey) {
+                const userLang = navigator.language || navigator.userLanguage;
+                if (userLang.toLowerCase().startsWith('he')) langKey = 'he';
+                else if (userLang.toLowerCase().startsWith('ar')) langKey = 'ar';
+                else langKey = 'en';
+            }
+
+            const isRtl = (langKey === 'he' || langKey === 'ar');
+
+            document.getElementById('html-root').setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+            document.getElementById('html-root').setAttribute('lang', langKey);
+
+            document.querySelectorAll('[data-i18n]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n');
+                if (translations[langKey] && translations[langKey][key]) {
+                    elem.innerText = translations[langKey][key];
+                }
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === langKey) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // update legal links
+            const links = ['privacy', 'terms', 'accessibility'];
+            links.forEach(id => {
+                const el = document.getElementById('link-' + (id==='accessibility'?'access':id));
+                if(el) el.href = `${id}.html?lang=${langKey}`;
+            });
+
+            // Update main content
+            const contentContainer = document.getElementById('content-container');
+            if (translations[langKey] && translations[langKey]['contentHtml']) {
+                contentContainer.innerHTML = translations[langKey]['contentHtml'];
+            }
+            
+            // Update URL without reloading
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('lang', langKey);
+            window.history.replaceState({}, '', newUrl);
+        }
+
+        window.onload = () => setLanguage();
+    </script>
+</body>
+</html>
