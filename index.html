@@ -513,9 +513,9 @@
             links.forEach(id => {
                 const pageName = id === 'access' ? 'accessibility' : id;
                 const el1 = document.getElementById('link-' + id);
-                if(el1) el1.href = `legal/${pageName}.html?lang=${langKey}`;
+                if(el1) el1.href = `${pageName}.html?lang=${langKey}`;
                 const el2 = document.getElementById('footer-' + id);
-                if(el2) el2.href = `legal/${pageName}.html?lang=${langKey}`;
+                if(el2) el2.href = `${pageName}.html?lang=${langKey}`;
             });
         }
 
